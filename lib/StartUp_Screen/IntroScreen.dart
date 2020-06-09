@@ -32,7 +32,6 @@ class pagescroll extends StatelessWidget {
   List<Widget> pageScroller = [
     IntroBild1(),
     IntroBild2(),
-    IntroBild3(),
     IntroBild4(),
   ];
 
@@ -42,20 +41,22 @@ class pagescroll extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: pageScroller.length,
-      child: Builder(
-        builder: (BuildContext) => Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: <Widget>[
-              TabPageSelector(),
-              Container(
-                height: 631,
-                width: double.infinity,
-                child: Center(
-                  child: TabBarView(children: pageScroller),
+      child: SafeArea(
+        child: Builder(
+          builder: (BuildContext) => Padding(
+            padding: const EdgeInsets.all(04.0),
+            child: Column(
+              children: <Widget>[
+                TabPageSelector(),
+                Container(
+                  height: 631,
+                  width: double.infinity,
+                  child: Center(
+                    child: TabBarView(children: pageScroller),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^0.1.3
+  font_awesome_flutter: ^8.0.1
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +27,10 @@ flutter:
     - Images/HemskärmBG.png
     - Images/Background.jpg
     - Images/Jag.jpg
+    - Images/Bild 1.png
+    - Images/Bild 2.png
+    - Images/Bild 3.png
+    - Images/Man1.jpg
+    - Images/Man2.jpg
+    - Images/Woman1.jpg
+    - Images/Woman2.jpg

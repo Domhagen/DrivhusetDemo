@@ -1,5 +1,6 @@
 import 'package:drivhuset/Alla_Bokningar/Aktuella_Bokningar.dart';
 import 'package:drivhuset/Const.dart';
+import 'package:drivhuset/LoginSignup/login_screen.dart';
 import 'package:drivhuset/StartUp_Screen/IntroScreen.dart';
 import 'package:drivhuset/StartUp_Screen/WelcomeScreen.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:drivhuset/Classer.dart';
 import 'Const.dart';
 import 'package:drivhuset/Alla_Bokningar/Tidigare_Bokningar.dart';
 import 'List.dart';
+import 'KalenderBokningar/Kalender.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,11 +17,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FirstScreen(),
+      home: WelcomeScreen(),
       theme: ThemeData(),
       routes: {
         '/tillhemskärm': (context) => MyHomePage(),
         '/tillintroskärm': (context) => WelcomeScreen(),
+        '/tillinlogg': (context) => LoginPage(),
       },
     );
   }
@@ -37,8 +40,12 @@ class _MyHomePageState extends State<MyHomePage> {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            pinned: true,
+            pinned: false,
             expandedHeight: 250,
+            title: Text(
+              '',
+              textAlign: TextAlign.center,
+            ),
             backgroundColor: Colors.teal,
             flexibleSpace: FlexibleSpaceBar(
               background: DrivhusetImage(),
@@ -51,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(left: 10, bottom: 10),
+                      margin: EdgeInsets.only(left: 10, bottom: 10, top: 12),
                       child: Text('Boka ny vägledning med,',
                           style: BokningarStorText),
                     ),

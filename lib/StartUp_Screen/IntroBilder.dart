@@ -2,14 +2,30 @@ import 'package:drivhuset/Const.dart';
 import 'package:drivhuset/main.dart';
 import 'package:flutter/material.dart';
 import 'package:drivhuset/StartUp_Screen/IntroScreen.dart';
+import 'package:flutter/services.dart';
 
 class IntroBild1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
+        SafeArea(
+          child: Align(
+            alignment: Alignment.topLeft,
+            child: IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+                size: 35,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
+        ),
         Padding(
-          padding: const EdgeInsets.only(top: 12.0),
+          padding: const EdgeInsets.only(top: 0.0),
           child: Text(
             'Exempel titel 1',
             style: RubrikTextIntro,
@@ -26,25 +42,19 @@ class IntroBild1 extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(
-          child: Container(
-            height: 325,
-            width: 325,
-            decoration: BoxDecoration(
-              color: Colors.teal,
-              image: DecorationImage(
-                  image: AssetImage('Images/Jag.jpg'), fit: BoxFit.cover),
-              borderRadius: BorderRadius.all(Radius.circular(70)),
-              border: Border.all(
-                color: Colors.white70,
-                width: 1.0,
-              ),
+        Center(
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Image.asset(
+              'Images/Bild 1.png',
+              fit: BoxFit.contain,
+              height: 290,
             ),
           ),
         ),
         Container(
           child: Padding(
-            padding: EdgeInsets.only(top: 120),
+            padding: EdgeInsets.only(top: 50),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -73,11 +83,12 @@ class IntroBild1 extends StatelessWidget {
                       if (!controller.indexIsChanging) {
                         var pageScroller = pagescroll();
                         controller.animateTo(pageScroller.length - 1);
+                        HapticFeedback.lightImpact();
                       }
                     },
                     icon: Icon(
                       Icons.arrow_forward_ios,
-                      color: Colors.teal,
+                      color: Colors.black,
                       size: 35,
                     ),
                   ),
@@ -97,34 +108,30 @@ class IntroBild2 extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(top: 12.0),
+          padding: const EdgeInsets.only(top: 30.0),
           child: Text(
             'Exempel titel 2',
             style: RubrikTextIntro,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 10.0, bottom: 45),
+          padding: const EdgeInsets.only(top: 5.0, bottom: 45),
           child: Align(
             alignment: Alignment.topCenter,
             child: Text(
-              'Exempel med text till exempel 1 och en bild som förklarar',
+              'Exempel med text till exempel 2 och en bild som förklarar',
               style: ExplaynText,
               textAlign: TextAlign.center,
             ),
           ),
         ),
-        Container(
-          height: 310,
-          width: 325,
-          decoration: BoxDecoration(
-            color: Colors.teal,
-            image: DecorationImage(
-                image: AssetImage('Images/Jag.jpg'), fit: BoxFit.cover),
-            borderRadius: BorderRadius.all(Radius.circular(70)),
-            border: Border.all(
-              color: Colors.white70,
-              width: 1.0,
+        Center(
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Image.asset(
+              'Images/Bild 2.png',
+              fit: BoxFit.fill,
+              height: 250,
             ),
           ),
         ),
@@ -139,7 +146,7 @@ class IntroBild3 extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(top: 12.0),
+          padding: const EdgeInsets.only(top: 30.0),
           child: Text(
             'Exempel titel 3',
             style: RubrikTextIntro,
@@ -156,17 +163,12 @@ class IntroBild3 extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          height: 310,
-          width: 325,
-          decoration: BoxDecoration(
-            color: Colors.teal,
-            image: DecorationImage(
-                image: AssetImage('Images/Jag.jpg'), fit: BoxFit.cover),
-            borderRadius: BorderRadius.all(Radius.circular(70)),
-            border: Border.all(
-              color: Colors.white70,
-              width: 1.0,
+        Center(
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Image.asset(
+              'Images/Bild 1.png',
+              fit: BoxFit.contain,
             ),
           ),
         ),
@@ -181,9 +183,9 @@ class IntroBild4 extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(top: 12.0),
+          padding: const EdgeInsets.only(top: 30.0),
           child: Text(
-            'Exempel titel 4',
+            'Exempel titel 3',
             style: RubrikTextIntro,
           ),
         ),
@@ -192,35 +194,28 @@ class IntroBild4 extends StatelessWidget {
           child: Align(
             alignment: Alignment.topCenter,
             child: Text(
-              'Exempel med text till exempel 1 och en bild som förklarar',
+              'Exempel med text till exempel 3 och en bild som förklarar',
               style: ExplaynText,
               textAlign: TextAlign.center,
             ),
           ),
         ),
-        Container(
-          height: 310,
-          width: 325,
-          decoration: BoxDecoration(
-            color: Colors.teal,
-            image: DecorationImage(
-                image: AssetImage('Images/Jag.jpg'), fit: BoxFit.cover),
-            borderRadius: BorderRadius.all(Radius.circular(70)),
-            border: Border.all(
-              color: Colors.white70,
-              width: 1.0,
+        Center(
+          child: Padding(
+            padding: EdgeInsets.only(left: 20, right: 20, top: 5),
+            child: Image.asset(
+              'Images/Bild 3.png',
+              fit: BoxFit.contain,
+              height: 230,
             ),
           ),
         ),
-        GestureDetector(
-          onTap: () {
-            Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (context) => MyHomePage()),
-                ModalRoute.withName("/tillhemskärm"));
-          },
+        SizedBox(
+          height: 165,
+        ),
+        Align(
+          alignment: Alignment.bottomRight,
           child: Container(
-            margin: EdgeInsets.only(top: 105, left: 225),
             height: 50,
             width: 140,
             decoration: BoxDecoration(
@@ -229,13 +224,19 @@ class IntroBild4 extends StatelessWidget {
                 Radius.circular(20),
               ),
             ),
-            child: Container(
-              child: Center(
-                child: Text(
-                  'Fortsätt',
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.teal,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, "/tillhemskärm");
+                HapticFeedback.lightImpact();
+              },
+              child: Container(
+                child: Center(
+                  child: Text(
+                    'Fortsätt',
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ),

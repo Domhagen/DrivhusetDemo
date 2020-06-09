@@ -1,5 +1,9 @@
 import 'package:drivhuset/Const.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'LoginSignup/login_screen.dart';
+import 'Slidingrout.dart';
+import 'StartUp_Screen/IntroScreen.dart';
 
 class DrivhusetImage extends StatelessWidget {
   @override
@@ -10,7 +14,7 @@ class DrivhusetImage extends StatelessWidget {
           Image.asset(
             'Images/HemskärmBG.png',
             width: double.infinity,
-            height: 250,
+            height: 270,
             fit: BoxFit.fill,
           ),
           Column(
@@ -73,6 +77,67 @@ class DrivhusetImage extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class AnimationContainer1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(top: 10, left: 20),
+      width: 275,
+      height: 55,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => WelcomeScreen()),
+          );
+          /*
+          Navigator.pushAndRemoveUntil(
+              context,
+              SlidingRoute(builder: (context) => WelcomeScreen()),
+              ModalRoute.withName("/tillintroskärm"));
+          */
+          HapticFeedback.lightImpact();
+        },
+        child: Text(
+          'Fortsätt utan konto',
+          style: TextStyle(
+            color: Colors.black87,
+            fontSize: 26,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class AnimationContainer2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 10),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LoginPage()),
+          );
+          HapticFeedback.lightImpact();
+        },
+        child: Text(
+          'Fortsätt med konto',
+          style: TextStyle(fontSize: 18, color: Colors.white70),
+        ),
       ),
     );
   }
