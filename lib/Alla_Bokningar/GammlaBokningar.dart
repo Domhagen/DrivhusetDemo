@@ -26,20 +26,24 @@ class GammlaBokningar extends StatelessWidget {
               style: TidigareBokningsText,
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(left: 290, top: 10),
-            height: 35,
-            width: 35,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              image: DecorationImage(
-                image: AssetImage('Images/Jag.jpg'),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(50.0)),
-              border: Border.all(
-                color: Colors.green.shade100,
-                width: 0.8,
+          Positioned(
+            right: 10,
+            top: 15,
+            child: Container(
+              //margin: EdgeInsets.only(left: 290, top: 10),
+              height: 35,
+              width: 35,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                image: DecorationImage(
+                  image: AssetImage('Images/Jag.jpg'),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                border: Border.all(
+                  color: Colors.green.shade100,
+                  width: 0.8,
+                ),
               ),
             ),
           ),

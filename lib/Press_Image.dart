@@ -26,7 +26,6 @@ class PressImage extends StatelessWidget {
           color: Colors.white,
           image: DecorationImage(
             image: imageProvider,
-            //AssetImage('Images/Man1.jpg'),
             fit: BoxFit.cover,
           ),
           borderRadius: BorderRadius.all(Radius.circular(50.0)),

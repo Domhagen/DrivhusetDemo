@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:drivhuset/Const.dart';
 import '../List.dart';
 import 'BokningsTider.dart';
+import 'Handledarna.dart';
 
 class Kalender extends StatefulWidget {
   @override
@@ -14,31 +15,11 @@ class _KalenderState extends State<Kalender> {
   final TextEditingController _cepController = TextEditingController();
 
   List<Widget> Tider = [
-    BokningsTider(
-
-        //  title1: '20 juni ',
-        //  title2: '13:30',
-        ),
-    BokningsTider(
-
-        //   title1: '24 juni ',
-        //   title2: '12:00',
-        ),
-    BokningsTider(
-
-        //   title1: '28 juni ',
-        //   title2: '16:00',
-        ),
-    BokningsTider(
-
-        //   title1: '30 juni ',
-        //   title2: '13:00',
-        ),
-    BokningsTider(
-
-        //   title1: '1 Juli ',
-        //   title2: '14:00',
-        ),
+    BokningsTider(),
+    // BokningsTider(),
+    // BokningsTider(),
+    // BokningsTider(),
+    //BokningsTider(),
   ];
 
   @override
@@ -66,10 +47,7 @@ class _KalenderState extends State<Kalender> {
                   ),
                   Container(
                     alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(
-                      left: 10,
-                      bottom: 10,
-                    ),
+                    margin: EdgeInsets.all(10),
                     child: Text(
                       'Boka ny vägledning',
                       textAlign: TextAlign.start,
@@ -81,11 +59,7 @@ class _KalenderState extends State<Kalender> {
                   ),
                   Container(
                     alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(
-                      left: 10,
-                      top: 10,
-                      bottom: 10,
-                    ),
+                    margin: EdgeInsets.all(10),
                     child: Text(
                       'Vem vill du boka vägledningen med?',
                       style: TextStyle(
@@ -94,10 +68,8 @@ class _KalenderState extends State<Kalender> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: ListBilder(),
-                  ),
+                  HandledarListan(),
+                  //Padding(padding: EdgeInsets.all(10), child: ListBilder(),),
                   Divider(
                     thickness: 1,
                     color: Colors.black12,
@@ -118,13 +90,7 @@ class _KalenderState extends State<Kalender> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: 50,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: Tider,
-                    ),
-                  ),
+                  BokningsTider(),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Divider(
@@ -147,8 +113,8 @@ class _KalenderState extends State<Kalender> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 20),
-                    height: 150,
+                    margin: EdgeInsets.all(20),
+                    height: 140,
                     width: 375,
                     decoration: BoxDecoration(
                       color: Colors.grey.shade300,
@@ -164,6 +130,29 @@ class _KalenderState extends State<Kalender> {
                           hintStyle: TextStyle(
                             color: Colors.grey.shade400,
                             fontSize: 18,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  BottomAppBar(
+                    color: Colors.teal.shade800,
+                    child: Container(
+                      height: 70,
+                      width: double.infinity,
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 10.0),
+                            child: Text(
+                              'Genomför bokning',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                              ),
+                            ),
                           ),
                         ),
                       ),

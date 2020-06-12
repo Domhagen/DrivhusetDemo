@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: WelcomeScreen(),
+      home: FirstScreen(),
       theme: ThemeData(),
       routes: {
         '/tillhemskärm': (context) => MyHomePage(),

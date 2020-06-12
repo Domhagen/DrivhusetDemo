@@ -21,18 +21,18 @@ class _FirstScreenState extends State<FirstScreen>
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: Duration(seconds: 2),
+      duration: Duration(milliseconds: 1500),
       vsync: this,
     )..forward();
     offset = Tween<Offset>(
-      begin: Offset(0.0, 5.0),
-      end: Offset(0.0, 2.5),
+      begin: Offset(0.0, 6.0),
+      end: Offset(0.0, 3.5),
     ).animate(CurvedAnimation(
       parent: controller,
       curve: Curves.easeIn,
     ));
     controller2 = AnimationController(
-      duration: Duration(seconds: 2),
+      duration: Duration(milliseconds: 1500),
       vsync: this,
     )..forward();
     offset2 = Tween<Offset>(
@@ -104,27 +104,6 @@ class _FirstScreenState extends State<FirstScreen>
                     AnimationContainer1(),
                     AnimationContainer2(),
                   ],
-                ),
-              ),
-            ),
-            ShrinkingButton(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
-                );
-                HapticFeedback.lightImpact();
-              },
-              buttonDuration: const Duration(milliseconds: 200),
-              buttonText: 'ShrinkingBtn',
-              buttonStyle: ButtonStyle(
-                borderRadius: BorderRadius.circular(10.0),
-                primaryColor: Colors.teal,
-                elevation: 20.0,
-                textStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22.0,
-                  color: Colors.black,
                 ),
               ),
             ),

@@ -40,3 +40,6 @@ const ExplaynText = TextStyle(fontSize: 20, color: Colors.white70);
 
 Color AktivBokningsTid = Colors.teal.shade900;
 Color InaktivBokningsTid = Colors.grey.shade400;
+
+const InaktivHandledare = Colors.white54;
+const AKtivHandledare = Colors.white10;
